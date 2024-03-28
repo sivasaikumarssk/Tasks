@@ -1,13 +1,14 @@
 import React from "react";
 import Sidebar from "../Components/Sidebar";
-import bg from  "../Assets/bg1.jpg"
- 
+import bg from "../Assets/bg1.jpg";
+import Navbar from "../Components/Navbar";
+
 const Homepage = () => {
   return (
     <div>
       <Sidebar />
-      <img src={bg}/>
-      
+      <Navbar />
+      <img src={bg} />
     </div>
   );
 };
