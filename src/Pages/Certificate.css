@@ -1,0 +1,113 @@
+.certificate {
+    width: 1000px;
+    height: 500px; 
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column; 
+    background-image: url('../Assets/bg2.jpg');
+    box-shadow:
+        inset #009688 0 0 0 5px, 
+      inset #059c8e 0 0 0 1px, 
+      inset #0cab9c 0 0 0 10px, 
+      inset #1fbdae 0 0 0 11px, 
+      inset #8ce9ff 0 0 0 16px, 
+      inset #48e4d6 0 0 0 17px, 
+      inset #e5f9f7 0 0 0 21px, 
+      inset #bfecf7 0 0 0 22px;
+    align-items: center; 
+  }
+  
+  .certificate h1,
+  .certificate h2,
+  .certificate h3 {
+    margin: 0;
+    font-weight: normal;
+  }
+  .certificate p{
+    margin-top: -75px;
+  }
+  
+  .certificate h1 {
+    font-size: 3.5em;
+    color: black;
+    margin-top: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .certificate h3 {
+    font-size: 1.5em;
+    margin-top: 1;
+    font-weight: 700;
+    font-style: normal;
+    color: black; 
+  }
+  .certificate h5 {
+    font-size: 1.5em;
+    margin-top: -4px;
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+  
+    color: red; 
+  }
+  .certificate h4 {
+    font-size: 1.5em;
+    
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    
+    margin-top: 0.5em;
+    font-size: 50px;
+    font-style: normal;
+  
+    color: red;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom:5px;
+    margin: -8px;
+  }
+  
+  
+  .footer {
+    display:flex;
+    
+    justify-content: space-between;
+  
+  }
+  
+  .date {
+    text-align: right;
+    margin-right: 600px;
+    text-align: end;
+    left: 100px;
+    
+  }
+  .Date{
+    color: black;
+    width: 50%;
+    
+  
+  
+  }
+  .realdate{
+    margin-right: 100px;
+    font-weight: bold;
+    margin-bottom: 150px;
+  }
+  .ceoName{
+    margin-left: 750px;
+    font-weight: bold;
+    margin-top: 300px;
+  }
+  .ceo-name{
+    margin-left: 700px  ;
+  }
+  button{
+    margin-left: 650px
+  }
