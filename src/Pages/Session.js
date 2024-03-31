@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import profile from "../Assets/bg4.jpg";
 import { useStopwatch } from "react-timer-hook";
+import "./Session.css";
 
 import {
   Card,
