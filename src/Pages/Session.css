@@ -1,0 +1,13 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card {
+    width: 30rem;
+  }
+  
+  .card-margin {
+    margin-right: 20px;
+  }
+  
