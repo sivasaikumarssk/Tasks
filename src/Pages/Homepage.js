@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "../Components/Sidebar";
 import bg from "../Assets/bg1.jpg";
 import Navbar from "../Components/Navbar";
-import './Homepage.css'
+import "./Homepage.css";
 import Login from "./login";
 import Logout from "./logout";
 import { useEffect } from "react";
@@ -25,6 +25,7 @@ const Homepage = () => {
         <Login />
         <Logout />
       </div>
+      <div></div>
     </div>
   );
 };

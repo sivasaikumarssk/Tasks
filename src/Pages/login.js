@@ -1,14 +1,20 @@
 import { GoogleLogin } from "react-google-login";
+import { useState } from "react";
 
 const clientId =
   "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
+
 function Login() {
+  const [user, setUser] = useState(null);
+
   const onSuccess = (res) => {
-    console.log("Login Sucess !  Current user :", res.profileObj);
+    console.log("Login Success! Current user:", res.profileObj);
+    setUser(res.profileObj); // Set user data in state
+    localStorage.setItem("user", JSON.stringify(res.profileObj)); // Save user data to localStorage
   };
 
   const onFailure = (res) => {
-    console.log("Login Failed ! res:", res);
+    console.log("Login Failed! res:", res);
   };
 
   return (
