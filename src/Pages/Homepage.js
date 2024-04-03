@@ -8,7 +8,7 @@ const Homepage = () => {
     <div>
       <Sidebar />
       <Navbar />
-      <img src={bg} />
+      <img src={bg} style={{ width: "100%", height: "83vh" }} />
     </div>
   );
 };
