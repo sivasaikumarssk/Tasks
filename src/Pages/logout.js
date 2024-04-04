@@ -8,7 +8,7 @@ function Logout() {
   const navigate = useNavigate();
 
   const onSuccess = () => {
-    localStorage.clear(); // Clear local storage
+    sessionStorage.clear(); // Clear local storage
     console.log("Logout successfully");
     navigate("/"); // Redirect to home page or login page
   };

@@ -5,10 +5,13 @@ import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { useNavigate } from "react-router-dom";
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import List from "@mui/material/List";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -153,16 +156,18 @@ export default function Sidebar() {
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                 }}
-                
-              > <HomeIcon/>
+              >
+                {" "}
+                <HomeIcon />
               </ListItemIcon>
               <ListItemText primary="Homepage" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
+
           <ListItem
             disablePadding
             sx={{ display: "block" }}
-            onClick={() => navigate("/test")}
+            onClick={() => navigate("/certificate")}
           >
             <ListItemButton
               sx={{
@@ -177,10 +182,67 @@ export default function Sidebar() {
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                 }}
-                
-              > <HomeIcon/>
+              >
+                {" "}
+                <InsertDriveFileIcon />
               </ListItemIcon>
-              <ListItemText primary="test" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText
+                primary="Certificate"
+                sx={{ opacity: open ? 1 : 0 }}
+              />
+            </ListItemButton>
+          </ListItem>
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => navigate("/session")}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {" "}
+                <AccessTimeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Session" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => navigate("/salary")}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                {" "}
+                <AccountBalanceIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="SalaryDetail"
+                sx={{ opacity: open ? 1 : 0 }}
+              />
             </ListItemButton>
           </ListItem>
         </List>

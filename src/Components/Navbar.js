@@ -10,12 +10,17 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
+import { GoogleLogout } from "react-google-login";
+import { Navigate, useNavigate } from "react-router-dom";
+
 import { useAppStore } from "./Appstore.js";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import Logout from "../Pages/logout.js";
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme }) => ({
@@ -63,6 +68,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const clientId =
+  "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const updateOpen = useAppStore((state) => state.updateOpen);
@@ -78,11 +85,21 @@ export default function Navbar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
+  const onSuccess = () => {
+    localStorage.clear();
+    console.log("Logout successfully");
+    Navigate("/");
+  };
+
+  const onFailure = (error) => {
+    console.error("Logout failed:", error);
+  };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
+  
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -107,6 +124,15 @@ export default function Navbar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <GoogleLogout
+        clientId={clientId}
+
+        buttonText="Logout"
+        onLogoutSuccess={onSuccess}
+        onFailure={onFailure}
+      >
+        <MenuItem>Logout</MenuItem>
+      </GoogleLogout>
     </Menu>
   );
 
