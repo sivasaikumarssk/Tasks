@@ -30,9 +30,12 @@ body {
   font-weight: bold;
 }
 .profile{
+  position: relative;
+  top: 150px;
+  margin-left: 150px;
   
-  margin-left: 1200px;
-  padding: 10px;
+  
+
 
 }
   
