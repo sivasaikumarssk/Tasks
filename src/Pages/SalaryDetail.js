@@ -16,18 +16,18 @@ const SalaryDetail = () => {
     <>
       <div ref={targetRef}>
         <div className="profile">
-        <div className="name">
-          <span className="detail-label">Employee Name :-</span>
-          <span className="detail-value">VIKRAM</span>
-        </div>
-        <div className="designation">
-          <span className="detail-label">Designation :-</span>
-          <span className="detail-value">INTERN</span>
-        </div>
-        <div className="month-year">
-          <span className="detail-label">Month & Year :-</span>
-          <span className="detail-value">March 2024</span>
-        </div>
+          <div className="name">
+            <span className="detail-label">Employee Name :-</span>
+            <span className="detail-value">VIKRAM</span>
+          </div>
+          <div className="designation">
+            <span className="detail-label">Designation :-</span>
+            <span className="detail-value">INTERN</span>
+          </div>
+          <div className="month-year">
+            <span className="detail-label">Month & Year :-</span>
+            <span className="detail-value">March 2024</span>
+          </div>
         </div>
         <div className="logo">
           <img src={logo} />
@@ -40,9 +40,9 @@ const SalaryDetail = () => {
         <div className="salary">
           <table>
             <tr>
-              <td>Earning</td>
+              <td style={{ backgroundColor: "lightblue " }}>Earning</td>
               <td></td>
-              <td>Deduction</td>
+              <td style={{ backgroundColor: "lightblue" }}>Deduction</td>
               <td></td>
             </tr>
             <tr>
