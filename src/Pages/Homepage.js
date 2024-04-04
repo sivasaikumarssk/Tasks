@@ -22,10 +22,10 @@ const Homepage = () => {
       <Sidebar />
       <Navbar />
       <div className="login">
-        <Login />
+      
         <Logout />
       </div>
-      <div></div>
+      <div><img src={bg}/></div>
     </div>
   );
 };
