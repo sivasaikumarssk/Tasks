@@ -22,10 +22,9 @@ const Homepage = () => {
     <div>
       <Sidebar />
       <Navbar />
-      {/* <div className="login">
-        <Logout />
-      </div> */}
-      <div><img src={welcome}/></div>
+      <div>
+        <img src={welcome} />
+      </div>
     </div>
   );
 };
