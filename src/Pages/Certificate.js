@@ -4,6 +4,7 @@ import logo from "../Assets/company-logo.jpeg";
 import "./Certificate.css";
 import moment from "moment";
 import { usePDF } from "react-to-pdf";
+import Sidebar from "../Components/Sidebar";
 
 const Certificate = () => {
   const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
@@ -16,6 +17,7 @@ const Certificate = () => {
 
   return (
     <>
+    <Sidebar/>
       <div>
         <button onClick={() => toPDF()}>
           Download PDF

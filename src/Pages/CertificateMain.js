@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CertificateMain.css";
 import { Link } from "react-router-dom";
 import Loader from "../Components/Loader";
+import Sidebar from "../Components/Sidebar";
 
 const CertificateMain = () => {
   const [name, setName] = useState("");
@@ -25,6 +26,7 @@ const CertificateMain = () => {
 
   return (
     <>
+    <Sidebar/>
       <div className="container">
         <div className="input">
           <input
