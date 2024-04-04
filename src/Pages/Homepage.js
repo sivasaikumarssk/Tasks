@@ -3,6 +3,7 @@ import Sidebar from "../Components/Sidebar";
 import bg from "../Assets/bg1.jpg";
 import Navbar from "../Components/Navbar";
 import "./Homepage.css";
+import welcome from "../Assets/Welcome.jpeg";
 import Login from "./login";
 import Logout from "./logout";
 import { useEffect } from "react";
@@ -21,10 +22,10 @@ const Homepage = () => {
     <div>
       <Sidebar />
       <Navbar />
-      <div className="login">
+      {/* <div className="login">
         <Logout />
-      </div>
-      <div><img src={bg}/></div>
+      </div> */}
+      <div><img src={welcome}/></div>
     </div>
   );
 };

@@ -8,9 +8,9 @@ function Logout() {
   const navigate = useNavigate();
 
   const onSuccess = () => {
-    sessionStorage.clear(); // Clear local storage
+    sessionStorage.clear(); 
     console.log("Logout successfully");
-    navigate("/"); // Redirect to home page or login page
+    navigate("/"); 
   };
 
   const onFailure = (error) => {

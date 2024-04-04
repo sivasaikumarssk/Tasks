@@ -9,8 +9,8 @@ function Login() {
 
   const onSuccess = (res) => {
     console.log("Login Success! Current user:", res.profileObj);
-    setUser(res.profileObj); // Set user data in state
-    sessionStorage.setItem("user", JSON.stringify(res.profileObj)); // Save user data to localStorage
+    setUser(res.profileObj); 
+    sessionStorage.setItem("user", JSON.stringify(res.profileObj)); 
   };
 
   const onFailure = (res) => {

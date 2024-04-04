@@ -1,3 +1,17 @@
-.login{
-    align-items: center;
-}
+
+  
+.img {
+    position: relative;
+
+  }
+  
+  .login {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    
+  }
+  
+    
+    

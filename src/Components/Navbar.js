@@ -7,10 +7,12 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
+import { gapi } from "gapi-script";
+
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
@@ -20,6 +22,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useAppStore } from "./Appstore.js";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { useEffect } from "react";
 import Logout from "../Pages/logout.js";
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -69,7 +72,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
   const clientId =
-  "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
+    "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const updateOpen = useAppStore((state) => state.updateOpen);
@@ -85,6 +88,13 @@ export default function Navbar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({ clientId: clientId, scope: "" });
+    }
+    gapi.load("client:auth2", start);
+  });
   const onSuccess = () => {
     localStorage.clear();
     console.log("Logout successfully");
@@ -99,7 +109,6 @@ export default function Navbar() {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-  
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -124,15 +133,9 @@ export default function Navbar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <GoogleLogout
-        clientId={clientId}
-
-        buttonText="Logout"
-        onLogoutSuccess={onSuccess}
-        onFailure={onFailure}
-      >
-        <MenuItem>Logout</MenuItem>
-      </GoogleLogout>
+      <MenuItem>
+      <Logout/>
+      </MenuItem>
     </Menu>
   );
 
