@@ -113,6 +113,7 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -134,7 +135,7 @@ export default function Navbar() {
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem>
-      <Logout/>
+        <Logout />
       </MenuItem>
     </Menu>
   );
@@ -158,11 +159,8 @@ export default function Navbar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+          <Badge badgeContent={4} color="error"></Badge>
         </IconButton>
-        <p>Messages</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -205,14 +203,6 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -235,6 +225,14 @@ export default function Navbar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
+              {/* {user.imageUrl ? (
+                // <img
+                //   src={user.imageUrl}
+                  
+                // />
+              ) : (
+                <AccountCircle />
+              )} */}
               <AccountCircle />
             </IconButton>
           </Box>
