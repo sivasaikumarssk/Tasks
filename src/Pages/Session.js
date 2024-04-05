@@ -45,7 +45,7 @@ const Session = () => {
       setSessionStarted(true);
     }
   };
-
+  const userDetails = JSON.parse(sessionStorage.getItem("user"));
   return (
     <>
       <div>
@@ -58,12 +58,12 @@ const Session = () => {
           <Card body outline className="card card-margin">
             <img
               alt="Profile"
-              src={profile}
+              src={userDetails.imageUrl}
               style={{
                 width: "150px",
                 height: "150px",
                 borderRadius: "100%",
-                marginRight: "50px",
+                marginTop: "5%",
               }}
             />
             <CardBody className="profile">
@@ -77,7 +77,7 @@ const Session = () => {
                     <tr>
                       <td>Name</td>
                       <th>-</th>
-                      <th>Vikram</th>{" "}
+                      <th>{userDetails.name}</th>{" "}
                     </tr>
                     <tr>
                       <td>Job Title</td>
@@ -97,7 +97,7 @@ const Session = () => {
                     <tr>
                       <td>Email Address</td>
                       <th>-</th>
-                      <th>vikram.vk@qwikspark.com</th>
+                      <th>{userDetails.email}</th>
                     </tr>
                   </tbody>
                 </Table>

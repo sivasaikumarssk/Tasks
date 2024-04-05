@@ -1,34 +1,34 @@
 .card-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .card {
-    width: 30rem;
-  }
-  
-  .card-margin {
-    margin-right: 20px;
-  }
-  .session-start {
-    background-color: red;
-    color: white;
-  }
-  
-  .session-end {
-    background-color: green;
-    color: white;
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
-  .profile{
-    margin-left: 250px;
-  }
-  img{
+.card {
+  width: 30rem;
+}
+
+.card-margin {
+  margin-right: 20px;
+}
+.session-start {
+  background-color: red;
+  color: white;
+}
+
+.session-end {
+  background-color: green;
+  color: white;
+}
+
+.profile {
+  margin-left: 250px;
+}
+/* img{
     margin-left: 300px;
-  }
-  .th{
-    margin-left: 150px;
-  }
-  button{
-    margin-left: 00px;
-  }
+  } */
+.th {
+  margin-left: 150px;
+}
+button {
+  margin-left: 00px;
+}
