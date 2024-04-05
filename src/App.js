@@ -1,11 +1,9 @@
 import "./App.css";
-import Sidebar from "./Components/Sidebar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./Pages/Homepage";
 import Mainpage from "./Pages/Mainpage";
 import CertificateMain from "./Pages/CertificateMain";
 import Certificate from "./Pages/Certificate";
-import Sidebar from './Components/Sidebar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homepage from './Pages/Homepage';
 import Mainpage from './Pages/Mainpage';

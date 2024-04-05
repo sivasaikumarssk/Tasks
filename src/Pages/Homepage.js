@@ -1,12 +1,8 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
-import bg from "../Assets/bg1.jpg";
 import Navbar from "../Components/Navbar";
 import "./Homepage.css";
 import welcome from "../Assets/Welcome.jpeg";
-import Login from "./login";
-import Logout from "./logout";
-import { useEffect } from "react";
 import { gapi } from "gapi-script";
 const clientId =
   "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
