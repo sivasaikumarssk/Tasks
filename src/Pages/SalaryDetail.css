@@ -1,7 +1,6 @@
 body {
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
   background-color: lightblue;
- 
 }
 
 .salary {
@@ -12,34 +11,28 @@ body {
 }
 
 .salary table {
-  width: 80%; 
+  width: 80%;
   border-collapse: collapse;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
-.salary th, 
+.salary th,
 .salary td {
   border: 1px solid black;
-  padding: 12px; 
+  padding: 12px;
   font-weight: bold;
   text-align: center;
 }
 
 .salary th {
-  background-color: lightgray; 
+  background-color: lightgray;
   font-weight: bold;
 }
-.profile{
+.profile {
   position: relative;
-  top: 150px;
-  margin-left: 150px;
-  
-  
-
-
+  top: 30vh;
+  right: 8%;
 }
-  
-
 
 .detail-label {
   font-weight: bold;
@@ -52,10 +45,9 @@ body {
 .company-name {
   text-align: center;
   font-weight: bold;
-  font-size: 24px; 
+  font-size: 24px;
   margin-bottom: 20px;
 }
-
 
 .salary table {
   border: 2px solid black;
@@ -67,12 +59,15 @@ body {
 .salary tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
-.logo{
+.logo {
   display: flex;
   margin-left: 700px;
   padding: 15px;
 }
-.year{
-  margin-left: 150px;
-  padding: 10px;
+.year {
+  position: relative;
+  left: 10%;
+}
+.download-button {
+  margin-left: 50%;
 }

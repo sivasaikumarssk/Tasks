@@ -4,6 +4,8 @@ import "./SalaryDetail.css";
 import { usePDF } from "react-to-pdf";
 import moment from "moment";
 import logo from "../Assets/company-logo.jpeg";
+import Navbar from "../Components/Navbar";
+import Sidebar from "../Components/Sidebar";
 
 const SalaryDetail = () => {
   const { name } = useParams();
@@ -12,25 +14,38 @@ const SalaryDetail = () => {
   useEffect(() => {
     document.title = `salarydetails - ${name}`;
   }, [name]);
+
+  const userDetails = JSON.parse(sessionStorage.getItem("user"));
   return (
-    <>
+    <div style={{ marginLeft: "10%" }}>
+      <div>
+        <Navbar />
+        <Sidebar />
+      </div>
       <div ref={targetRef}>
         <div className="profile">
           <div className="name">
             <span className="detail-label">Employee Name :-</span>
-            <span className="detail-value">VIKRAM</span>
+            <span className="detail-value">{userDetails.name}</span>
           </div>
           <div className="designation">
             <span className="detail-label">Designation :-</span>
-            <span className="detail-value">INTERN</span>
+            <span className="detail-value">Software Engineer</span>
           </div>
           <div className="month-year">
             <span className="detail-label">Month & Year :-</span>
             <span className="detail-value">March 2024</span>
           </div>
         </div>
-        <div className="logo">
-          <img src={logo} />
+        <div>
+          <img
+            src={logo}
+            style={{
+              width: "150px",
+              height: "150px",
+              marginLeft: "23%",
+            }}
+          />
         </div>
 
         <div className="company-name">
@@ -105,10 +120,10 @@ const SalaryDetail = () => {
           <span className="detail-value">______________</span>
         </div>
       </div>
-      <div>
+      <div className="download-button">
         <button onClick={() => toPDF()}>Download PDF</button>
       </div>
-    </>
+    </div>
   );
 };
 
