@@ -1,5 +1,5 @@
 import { GoogleLogin } from "react-google-login";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const clientId =
   "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
@@ -9,8 +9,8 @@ function Login() {
 
   const onSuccess = (res) => {
     console.log("Login Success! Current user:", res.profileObj);
-    setUser(res.profileObj); 
-    sessionStorage.setItem("user", JSON.stringify(res.profileObj)); 
+    setUser(res.profileObj);
+    sessionStorage.setItem("user", JSON.stringify(res.profileObj));
   };
 
   const onFailure = (res) => {

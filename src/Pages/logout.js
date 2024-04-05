@@ -1,5 +1,6 @@
 import { GoogleLogout } from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 const clientId =
   "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
@@ -8,9 +9,9 @@ function Logout() {
   const navigate = useNavigate();
 
   const onSuccess = () => {
-    sessionStorage.clear(); 
+    sessionStorage.clear();
     console.log("Logout successfully");
-    navigate("/"); 
+    navigate("/");
   };
 
   const onFailure = (error) => {
