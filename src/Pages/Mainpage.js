@@ -30,7 +30,7 @@ const Mainpage = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/homepage");
+      navigate("/home");
     }
   }, [isLoggedIn, navigate]);
 
