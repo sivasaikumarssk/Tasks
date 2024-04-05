@@ -4,23 +4,19 @@ import Homepage from "./Pages/Homepage";
 import Mainpage from "./Pages/Mainpage";
 import CertificateMain from "./Pages/CertificateMain";
 import Certificate from "./Pages/Certificate";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Homepage from './Pages/Homepage';
-import Mainpage from './Pages/Mainpage';
-import Test from './Pages/test';
+import SalaryDetail from "./Pages/SalaryDetail";
+import Session from "./Pages/Session";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="homepage" element={<CertificateMain />} />
+        <Route path="/home" element={<Homepage />} />
         <Route path="/certificate/:name/:course" element={<Certificate />} />
-      <Route path='/' element={<Mainpage/>} />
-        <Route path='homepage' element={<Homepage/>} />
-        <Route path='test' element={<Test/>} />
-
-        
+        <Route path="/certificate" element={<CertificateMain />} />
+        <Route path="/" element={<Mainpage />} />
+        <Route path="/salary" element={<SalaryDetail />} />
+        <Route path="/session" element={<Session />} />
       </Routes>
     </BrowserRouter>
   );
