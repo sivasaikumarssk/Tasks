@@ -7,15 +7,23 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
+import { gapi } from "gapi-script";
+
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
+import { GoogleLogout } from "react-google-login";
+import { Navigate, useNavigate } from "react-router-dom";
+
 import { useAppStore } from "./Appstore.js";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import { useEffect } from "react";
+import Logout from "../Pages/logout.js";
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })(({ theme }) => ({
@@ -63,6 +71,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const clientId =
+    "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const updateOpen = useAppStore((state) => state.updateOpen);
@@ -79,6 +89,22 @@ export default function Navbar() {
     setMobileMoreAnchorEl(null);
   };
 
+  useEffect(() => {
+    function start() {
+      gapi.client.init({ clientId: clientId, scope: "" });
+    }
+    gapi.load("client:auth2", start);
+  });
+  const onSuccess = () => {
+    localStorage.clear();
+    console.log("Logout successfully");
+    Navigate("/");
+  };
+
+  const onFailure = (error) => {
+    console.error("Logout failed:", error);
+  };
+
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -87,6 +113,7 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  const user = JSON.parse(sessionStorage.getItem("user"));
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -107,6 +134,9 @@ export default function Navbar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem>
+        <Logout />
+      </MenuItem>
     </Menu>
   );
 
@@ -129,11 +159,8 @@ export default function Navbar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
+          <Badge badgeContent={4} color="error"></Badge>
         </IconButton>
-        <p>Messages</p>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -176,14 +203,6 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -206,6 +225,14 @@ export default function Navbar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
+              {/* {user.imageUrl ? (
+                // <img
+                //   src={user.imageUrl}
+                  
+                // />
+              ) : (
+                <AccountCircle />
+              )} */}
               <AccountCircle />
             </IconButton>
           </Box>
