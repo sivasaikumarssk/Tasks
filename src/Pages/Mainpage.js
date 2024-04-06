@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { gapi } from "gapi-script";
 import { useNavigate } from "react-router-dom";
 import Login from "./login";
-import img from "../Assets/bg1.jpg";
 import "./Mainpage.css";
 import bg from "../Assets/loginbg.jpg";
 
@@ -37,7 +36,7 @@ const Mainpage = () => {
   return (
     <>
       <div className="img">
-        <img src={bg} />
+        <img src={bg} style={{ width: "100%", height: "100vh" }} />
       </div>
       <div className="login">
         <Login />
