@@ -89,24 +89,30 @@
     
   }
   .Date{
-    color: black;
-    width: 50%;
+    position: relative;
+    bottom: 50px;
+    font-style: italic;
+    right: 70px;
     
   
   
   }
   .realdate{
-    margin-right: 100px;
-    font-weight: bold;
-    margin-bottom: 150px;
+    position: relative;
+    bottom: 50px;
+    font-weight: bolder;
+    right: 30px;
   }
   .ceoName{
-    margin-left: 750px;
-    font-weight: bold;
-    margin-top: 300px;
+   position: relative;
+   bottom: 100px;
+   left: 600px;
+   font-weight: bolder;
   }
   .ceo-name{
-    margin-left: 700px  ;
+    position: relative;
+    bottom: 100px;
+    left: 570px;
   }
   button{
     margin-left: 650px
