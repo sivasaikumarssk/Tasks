@@ -1,7 +1,12 @@
-img{
-    position: relative;
-    bottom: 50px;
-    left : 300px;
-    width: 900px;
-   height: 600px;
+img {
+  position: relative;
+  bottom: 50px;
+  left: 300px;
+  width: 900px;
+  height: 600px;
+}
+.dashboard-data {
+  margin-left: 18%;
+  display: flex;
+  gap: 15%;
 }
