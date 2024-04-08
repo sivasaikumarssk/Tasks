@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import profile from "../Assets/bg4.jpg";
 import { useStopwatch } from "react-timer-hook";
 import "./Session.css";
@@ -46,6 +46,10 @@ const Session = () => {
     }
   };
   const userDetails = JSON.parse(sessionStorage.getItem("user"));
+  useEffect(() => {
+    localStorage.setItem("session", hours + ":" + minutes + ":" + seconds);
+  }, [seconds, hours, minutes]);
+  let timeValue = localStorage.getItem("session");
   return (
     <>
       <div>
@@ -92,7 +96,7 @@ const Session = () => {
                     <tr>
                       <td>Phone Number</td>
                       <th>-</th>
-                      <th>6381563938</th>
+                      <th>9876543210</th>
                     </tr>
                     <tr>
                       <td>Email Address</td>
@@ -118,8 +122,9 @@ const Session = () => {
                 </button>
                 {sessionStarted && (
                   <div style={{ fontSize: " 40px" }}>
-                    <span>{hours}</span>:<span>{minutes}</span>:
-                    <span>{seconds}</span>
+                    {/* <span>{hours}</span>:<span>{minutes}</span>:
+                    <span>{seconds}</span> */}
+                    {timeValue}
                   </div>
                 )}
                 {!sessionStarted && sessionTime && (
