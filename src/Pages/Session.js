@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
+import Footer from "../Components/footer";
 
 const Session = () => {
   const {
@@ -53,9 +54,11 @@ const Session = () => {
   return (
     <>
       <div>
+        <Sidebar/>
         <Navbar />
-        <Sidebar />
+
       </div>
+      <div>
 
       <Row className="justify-content-center card-container">
         <Col md="auto">
@@ -138,6 +141,9 @@ const Session = () => {
           </Card>
         </Col>
       </Row>
+      </div>
+      <Footer/>
+      
     </>
   );
 };

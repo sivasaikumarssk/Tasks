@@ -67,10 +67,13 @@
   }
   
   .logo {
+    position: relative;
     width: 100px;
     height: 100px;
     margin-bottom:5px;
     margin: -8px;
+    left: 0px;
+    bottom: 5px;
   }
   
   
@@ -111,6 +114,6 @@
     bottom: 100px;
     left: 570px;
   }
-  button{
+  .download{
     margin-left: 650px
   }

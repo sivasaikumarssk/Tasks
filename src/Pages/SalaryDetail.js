@@ -6,6 +6,7 @@ import moment from "moment";
 import logo from "../Assets/company-logo.jpeg";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
+import Footer from "../Components/footer";
 
 const SalaryDetail = () => {
   const { name } = useParams();
@@ -19,8 +20,8 @@ const SalaryDetail = () => {
   return (
     <div style={{ marginLeft: "10%" }}>
       <div>
-        <Navbar />
-        <Sidebar />
+      <Sidebar />
+        <Navbar />  
       </div>
       <div ref={targetRef}>
         <div className="profile">
@@ -123,6 +124,7 @@ const SalaryDetail = () => {
       <div className="download-button">
         <button onClick={() => toPDF()}>Download PDF</button>
       </div>
+      <Footer/>
     </div>
   );
 };

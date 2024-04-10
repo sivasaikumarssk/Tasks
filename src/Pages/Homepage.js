@@ -5,6 +5,7 @@ import "./Homepage.css";
 import { gapi } from "gapi-script";
 import ApexChart from "../Components/PieChart";
 import BarChart from "../Components/Barchart";
+import Footer from "../Components/footer";
 const clientId =
   "937248963100-61kuo1sinu15sph83fqc1ub6npjn3vrq.apps.googleusercontent.com";
 
@@ -17,6 +18,7 @@ const Homepage = () => {
     gapi.load("client:auth2", start);
   });
   return (
+    <>
     <div>
       <Sidebar />
       <Navbar />
@@ -32,7 +34,10 @@ const Homepage = () => {
         <ApexChart />
         <BarChart />
       </div>
+      <Footer/>
     </div>
+    
+    </>
   );
 };
 

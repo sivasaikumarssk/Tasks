@@ -5,6 +5,8 @@ import "./Certificate.css";
 import moment from "moment";
 import { usePDF } from "react-to-pdf";
 import Sidebar from "../Components/Sidebar";
+import Footer from "../Components/footer";
+import Navbar from "../Components/Navbar";
 
 const Certificate = () => {
   const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
@@ -18,7 +20,10 @@ const Certificate = () => {
   return (
     <>
     <Sidebar/>
+    <Navbar/>
+    
       <div>
+        <div className="download">
         <button onClick={() => toPDF()}>
           Download PDF
           <a
@@ -26,6 +31,7 @@ const Certificate = () => {
             download
           />
         </button>
+        </div>
         <div ref={targetRef}>
           <div className="certificate">
             <img src={logo} className="logo" />
@@ -49,6 +55,7 @@ const Certificate = () => {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     </>
   );

@@ -3,6 +3,8 @@ import "./CertificateMain.css";
 import { Link } from "react-router-dom";
 import Loader from "../Components/Loader";
 import Sidebar from "../Components/Sidebar";
+import Footer from "../Components/footer";
+import Navbar from "../Components/Navbar";
 
 const CertificateMain = () => {
   const [name, setName] = useState("");
@@ -27,6 +29,7 @@ const CertificateMain = () => {
   return (
     <>
     <Sidebar/>
+    <Navbar/>
       <div className="container">
         <div className="input">
           <input
@@ -60,6 +63,7 @@ const CertificateMain = () => {
         </div>
         {isLoading && <Loader/>}
       </div>
+      <Footer/>
     </>
   );
 };
