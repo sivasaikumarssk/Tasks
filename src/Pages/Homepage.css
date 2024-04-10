@@ -8,5 +8,8 @@ img {
 .dashboard-data {
   margin-left: 18%;
   display: flex;
-  gap: 15%;
+  justify-content: space-around;
+}
+.welcome-note {
+  margin-left: 18%;
 }
