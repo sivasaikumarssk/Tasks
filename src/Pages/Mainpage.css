@@ -1,0 +1,10 @@
+.img {
+  position: relative;
+}
+
+.login {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+}

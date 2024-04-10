@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: lightblue;
+}
+
+.salary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.salary table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.salary th,
+.salary td {
+  border: 1px solid black;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.salary th {
+  background-color: lightgray;
+  font-weight: bold;
+}
+.profile {
+  position: relative;
+  top: 30vh;
+  right: 8%;
+}
+
+.detail-label {
+  font-weight: bold;
+}
+
+.detail-value {
+  margin-left: 5px;
+}
+
+.company-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.salary table {
+  border: 2px solid black;
+}
+
+.salary tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.salary tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+.logo {
+  display: flex;
+  margin-left: 700px;
+  padding: 15px;
+}
+.year {
+  position: relative;
+  left: 10%;
+}
+.download-button {
+  margin-left: 50%;
+}
