@@ -38,7 +38,7 @@ class ApexChart extends React.Component {
             options={this.state.options}
             series={this.state.series}
             type="pie"
-            width={380}
+            width={500}
           />
         </div>
         <div id="html-dist"></div>
