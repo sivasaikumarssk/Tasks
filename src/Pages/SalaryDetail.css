@@ -30,8 +30,8 @@ body {
 }
 .profile {
   position: relative;
-  top: 30vh;
-  right: 8%;
+  top: 10vh;
+  left:55%;
 }
 
 .detail-label {

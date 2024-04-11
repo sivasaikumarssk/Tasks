@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import logo from "../Assets/company-logo.jpeg";
 import "./Certificate.css";
@@ -7,9 +7,11 @@ import { usePDF } from "react-to-pdf";
 import Sidebar from "../Components/Sidebar";
 import Footer from "../Components/footer";
 import Navbar from "../Components/Navbar";
+import { ReactToPrint } from "react-to-print";
 
 const Certificate = () => {
   const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  const tableRef = useRef(); // Define tableRef
 
   const { name, course } = useParams();
 
@@ -19,22 +21,37 @@ const Certificate = () => {
 
   return (
     <>
-    <Sidebar/>
-    <Navbar/>
-    
+      <Sidebar />
+      <Navbar />
       <div>
         <div className="download">
-        <button onClick={() => toPDF()}>
-          Download PDF
-          <a
-            href="http://localhost:3000/certificate/vikram/Web%20Development"
-            download
-          />
-        </button>
+          <div>
+            <ReactToPrint
+              trigger={() => {
+                return (
+                  <button
+                    style={{
+                      position: "relative",
+                      marginLeft: "23%",
+                      width: "200px",
+                      height: "50px",
+                      top: "40px",
+                      right: "200px",
+                    }}
+                  >
+                    Print the certificate
+                  </button>
+                );
+              }}
+              content={() => tableRef.current}
+              documentTitle="Certificate"
+              pageStyle="print"
+            />
+          </div>
         </div>
-        <div ref={targetRef}>
+        <div ref={tableRef}>
           <div className="certificate">
-            <img src={logo} className="logo" />
+            <img src={logo} className="logo" alt="Company Logo" />
             <h1>CERTIFICATE</h1>
             <h2>OF COMPLETION</h2>
             <h3>This certificate is presented to</h3>
@@ -55,7 +72,7 @@ const Certificate = () => {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

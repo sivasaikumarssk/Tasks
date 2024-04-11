@@ -1,7 +1,7 @@
 .certificate {
     width: 1000px;
     height: 500px; 
-    border: 1px solid black;
+    border: 1px solid red;
     margin: 0 auto;
     margin-top: 60px;
     padding: 30px;
@@ -72,7 +72,7 @@
     height: 100px;
     margin-bottom:5px;
     margin: -8px;
-    left: 0px;
+    left: -320px;
     bottom: 5px;
   }
   
